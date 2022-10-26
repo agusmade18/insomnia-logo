@@ -3,10 +3,10 @@ import { useNavigate, Link, useLocation } from "react-router-dom";
 
 function Navbar() {
   const menu = [
-    { name: "Home", link: "/home" },
-    { name: "How to Order", link: "/order" },
-    { name: "Portfolio", link: "/portfolio" },
-    { name: "Contact", link: "/contact" },
+    { name: "Home", link: "/#home" },
+    { name: "How to Order", link: "/#order" },
+    { name: "Portfolio", link: "/#portfolio" },
+    { name: "Contact", link: "/#contact" },
   ];
 
   const [menuClick, setMenuClick] = useState(false);

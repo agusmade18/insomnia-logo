@@ -1,50 +1,42 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import LoadingImage from "../../../assets/loading-image.gif";
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import "react-lazy-load-image-component/src/effects/blur.css";
+import logo1 from "../../../assets/logo/logo3.jpeg";
+import logo2 from "../../../assets/logo/logo15.jpeg";
+import logo3 from "../../../assets/logo/logo16.jpeg";
+import logo4 from "../../../assets/logo/logo18.jpeg";
+import logo5 from "../../../assets/logo/logo20.jpeg";
+import logo6 from "../../../assets/logo/logo22.jpeg";
+import logo7 from "../../../assets/logo/logo27.jpeg";
+import logo8 from "../../../assets/logo/logo29.jpeg";
 
 const data = [
   {
-    "title": "Find me on Twitter",
-    "link": "https://twitter.com/kendalmintcode",
-    "imageUrl": "https://placeimg.com/300/300/any"
+    imageUrl: logo1,
   },
   {
-    "title": "Welcome to Ark Labs",
-    "link": "https://ark-labs.co.uk",
-    "imageUrl": "https://placeimg.com/300/300/animals"
+    imageUrl: logo2,
   },
   {
-    "title": "Some sort of third title",
-    "link": "https://twitter.com/kendalmintcode",
-    "imageUrl": "https://placeimg.com/300/300/architecture"
+    imageUrl: logo3,
   },
   {
-    "title": "Super item number the last",
-    "link": "https://twitter.com/kendalmintcode",
-    "imageUrl": "https://placeimg.com/300/300/tech"
+    imageUrl: logo4,
   },
   {
-    "title": "Welcome to Ark Labs",
-    "link": "https://ark-labs.co.uk",
-    "imageUrl": "https://placeimg.com/300/300/animals"
+    imageUrl: logo5,
   },
   {
-    "title": "Welcome to Ark Labs",
-    "link": "https://ark-labs.co.uk",
-    "imageUrl": "https://placeimg.com/300/300/animals"
+    imageUrl: logo6,
   },
   {
-    "title": "Welcome to Ark Labs",
-    "link": "https://ark-labs.co.uk",
-    "imageUrl": "https://placeimg.com/300/300/animals"
+    imageUrl: logo7,
   },
   {
-    "title": "Welcome to Ark Labs",
-    "link": "https://ark-labs.co.uk",
-    "imageUrl": "https://placeimg.com/300/300/animals"
+    imageUrl: logo8,
   },
-]
+];
 
 const Carousel = () => {
   const maxScrollWidth = useRef(0);
@@ -67,11 +59,11 @@ const Carousel = () => {
   };
 
   const isDisabled = (direction) => {
-    if (direction === 'prev') {
+    if (direction === "prev") {
       return currentIndex <= 0;
     }
 
-    if (direction === 'next' && carousel.current !== null) {
+    if (direction === "next" && carousel.current !== null) {
       return (
         carousel.current.offsetWidth * currentIndex >= maxScrollWidth.current
       );
@@ -93,89 +85,94 @@ const Carousel = () => {
   }, []);
 
   return (
-    <div className="carousel my-1 mx-auto">
-      <div className="relative overflow-hidden">
-        <div className="flex justify-between absolute top left w-full h-full">
-          <button
-            onClick={movePrev}
-            className="hover:bg-blue-900/75 text-white w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
-            disabled={isDisabled('prev')}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-20 -ml-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
+    <section id="home">
+      <div className="carousel my-1 mx-auto">
+        <div className="relative overflow-hidden">
+          <div className="flex justify-between absolute top left w-full h-full">
+            <button
+              onClick={movePrev}
+              className="hover:bg-blue-900/75 text-white w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
+              disabled={isDisabled("prev")}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-            <span className="sr-only">Prev</span>
-          </button>
-          <button
-            onClick={moveNext}
-            className="hover:bg-blue-900/75 text-white w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
-            disabled={isDisabled('next')}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-20 -ml-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-            <span className="sr-only">Next</span>
-          </button>
-        </div>
-        <div
-          ref={carousel}
-          className="carousel-container relative flex gap-1 overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
-        >
-          {data.map((resource, index) => {
-            return (
-              <div
-                key={index}
-                className="carousel-item text-center relative w-64 h-64 snap-start"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-12 w-20 -ml-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
               >
-                <a
-                  href={resource.link}
-                  className="h-full w-full aspect-square block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0"
-                  style={{ backgroundImage: `url(${resource.imageUrl || ''})` }}
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+              <span className="sr-only">Prev</span>
+            </button>
+            <button
+              onClick={moveNext}
+              className="hover:bg-blue-900/75 text-white w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
+              disabled={isDisabled("next")}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-12 w-20 -ml-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+              <span className="sr-only">Next</span>
+            </button>
+          </div>
+          <div
+            ref={carousel}
+            className="carousel-container relative flex gap-1 overflow-hidden scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
+          >
+            {data.map((resource, index) => {
+              return (
+                <div
+                  key={index}
+                  className="text-center relative w-64 h-64 snap-start"
                 >
-                  <LazyLoadImage src={resource.imageUrl || ''}
-                    className="w-full aspect-square hidden"
-                    loading="lazy" 
-                    alt={resource.title}
-                    placeholderSrc={LoadingImage}
-                    effect="blur"
-                  />
-                </a>
-                <a
+                  <a
+                    href={resource.link}
+                    className="h-full w-full aspect-square block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0"
+                    style={{
+                      backgroundImage: `url(${resource.imageUrl || ""})`,
+                    }}
+                  >
+                    <LazyLoadImage
+                      src={resource.imageUrl || ""}
+                      className="w-full aspect-square hidden object-none object-center"
+                      loading="lazy"
+                      alt={resource.title}
+                      placeholderSrc={LoadingImage}
+                      effect="blur"
+                    />
+                  </a>
+                  {/* <a
                   href={resource.link}
                   className="h-full w-full aspect-square block absolute top-0 left-0 transition-opacity duration-300 opacity-0 hover:opacity-100 bg-blue-800/75 z-10"
                 >
                   <h3 className="text-white py-6 px-3 mx-auto text-xl">
                     {resource.title}
                   </h3>
-                </a>
-              </div>
-            );
-          })}
+                </a> */}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
